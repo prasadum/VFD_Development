@@ -203,8 +203,6 @@ footer{font-size:13px;color:var(--muted);margin-top:30px}
       <h3 data-i="t1obj"></h3>
       <div class="objgrp" data-i="part1"></div>
       <ol class="seq"><li data-i="t1o1"></li><li data-i="t1o2"></li><li data-i="t1o3"></li><li data-i="t1o4"></li><li data-i="t1o5"></li></ol>
-      <div class="objgrp" data-i="part2"></div>
-      <ol class="seq" style="counter-reset:s 5"><li data-i="t1o6"></li><li data-i="t1o7"></li><li data-i="t1o8"></li><li data-i="t1o9"></li></ol>
     </div>
     <div>
       <div class="lab">
@@ -307,10 +305,14 @@ footer{font-size:13px;color:var(--muted);margin-top:30px}
       <p class="lede" data-i="t4p1"></p>
       <div class="formula">N<sub>s</sub> = 120 × f / P<small data-i="t4fx"></small></div>
       <p data-i="t4p2"></p>
+      <div class="formula">P = 2πNT / 60 P = 2πNT / 60 &nbsp;W &nbsp;·&nbsp; BHP = 2πNT / (60 × 746)nbsp;(W)<br>BHP = 2πNT / (60 × 746)<small data-i="t4bhpk"></small></div>
+      <p data-i="t4bhp"></p>
+      <div class="wk"><h4 data-i="t4bhpH"></h4><div class="st">P = 2 × 3.14 × 1440 × 50 / 60 = 7536 W</div><div class="st">BHP = 7536 / 746 ≈ 10.1 HP</div><div class="st" data-i="t4bhpS"></div><div class="res" data-i="t4bhpR"></div></div>
       <h3 data-i="t4h2"></h3>
       <p data-i="t4p3"></p>
       <div class="formula">f ∝ 1/Φ &nbsp;·&nbsp; V ∝ Φ &nbsp;→&nbsp; V/f = const<small data-i="t4vf"></small></div>
       <p data-i="t4p4"></p>
+      <p class="small" data-i="t4scalar"></p>
     </div>
     <div class="lab">
       <div class="tag"><span data-i="tryit"></span><span>V/f</span></div>
@@ -459,10 +461,12 @@ footer{font-size:13px;color:var(--muted);margin-top:30px}
   <h3 data-i="t8q"></h3>
   <p class="small" data-i="t8qi"></p>
   <div class="mfgrid" id="mfgrid"></div>
+  <div class="note key"><strong data-i="remember"></strong><span data-i="nextMod"></span></div>
+  <footer data-i="foot"></footer>
 </section>
 
 <!-- 9 -->
-<section class="panel" id="t9" role="tabpanel">
+<section class="panel" id="t9" hidden role="tabpanel">
   <div class="eyebrow" data-i="tab9"></div>
   <h2 data-i="h9"></h2>
   <div data-i="P9a"></div>
@@ -479,7 +483,7 @@ footer{font-size:13px;color:var(--muted);margin-top:30px}
 </section>
 
 <!-- 10 -->
-<section class="panel" id="t10" role="tabpanel">
+<section class="panel" id="t10" hidden role="tabpanel">
   <div class="eyebrow" data-i="tab10"></div>
   <h2 data-i="h10"></h2>
   <div data-i="P10a"></div>
@@ -499,10 +503,35 @@ footer{font-size:13px;color:var(--muted);margin-top:30px}
     <canvas id="startCv" width="900" height="260"></canvas>
     <div class="legend"><span><i style="background:var(--b)"></i><span data-i="a10l1"></span></span><span><i style="background:var(--r)"></i><span data-i="a10l2"></span></span><span><i style="background:var(--muted)"></i><span data-i="a10l3"></span></span></div>
   </div>
+  <h3 data-i="focH"></h3>
+  <p class="lede" data-i="focP"></p>
+  <div class="cols">
+    <div>
+      <ol class="seq"><li data-i="focS1"></li><li data-i="focS2"></li><li data-i="focS3"></li><li data-i="focS4"></li><li data-i="focS5"></li></ol>
+      <div class="note key"><strong data-i="remember"></strong><span data-i="focKey"></span></div>
+    </div>
+    <div class="lab">
+      <div class="tag"><span data-i="tryit"></span><span data-i="focT"></span></div>
+      <canvas id="focCv" width="640" height="320"></canvas>
+      <div class="legend"><span><i style="background:var(--r)"></i><span data-i="focG1"></span></span><span><i style="background:var(--b)"></i><span data-i="focG2"></span></span><span><i style="background:var(--y)"></i><span data-i="focG3"></span></span><span><i style="background:var(--ok)"></i><span data-i="focG4"></span></span></div>
+      <div class="ctl"><label for="focIq" data-i="focL1"></label><output id="focIqO"></output><input type="range" id="focIq" min="0" max="100" step="1" value="60"></div>
+      <div class="ctl"><label for="focId" data-i="focL2"></label><output id="focIdO"></output><input type="range" id="focId" min="-60" max="0" step="1" value="0"></div>
+      <p class="small" style="margin:10px 0 0" data-i="focN"></p>
+    </div>
+  </div>
+  <h3 data-i="svH"></h3>
+  <div class="tblwrap"><table class="wide"><thead><tr><th></th><th data-i="svC1"></th><th data-i="svC2"></th></tr></thead><tbody>
+    <tr><td data-i="svR1"></td><td data-i="svR1a"></td><td data-i="svR1b"></td></tr>
+    <tr><td data-i="svR2"></td><td data-i="svR2a"></td><td data-i="svR2b"></td></tr>
+    <tr><td data-i="svR3"></td><td data-i="svR3a"></td><td data-i="svR3b"></td></tr>
+    <tr><td data-i="svR4"></td><td data-i="svR4a"></td><td data-i="svR4b"></td></tr>
+    <tr><td data-i="svR5"></td><td data-i="svR5a"></td><td data-i="svR5b"></td></tr>
+    <tr><td data-i="svR6"></td><td data-i="svR6a"></td><td data-i="svR6b"></td></tr>
+  </tbody></table></div>
 </section>
 
 <!-- 11 -->
-<section class="panel" id="t11" role="tabpanel">
+<section class="panel" id="t11" hidden role="tabpanel">
   <div class="eyebrow" data-i="tab11"></div>
   <h2 data-i="h11"></h2>
   <div class="cols">
@@ -529,7 +558,7 @@ footer{font-size:13px;color:var(--muted);margin-top:30px}
 </section>
 
 <!-- 12 -->
-<section class="panel" id="t12" role="tabpanel">
+<section class="panel" id="t12" hidden role="tabpanel">
   <div class="eyebrow" data-i="tab12"></div>
   <h2 data-i="h12"></h2>
   <div class="cols" style="align-items:center">
@@ -543,7 +572,7 @@ footer{font-size:13px;color:var(--muted);margin-top:30px}
 </section>
 
 <!-- 13 -->
-<section class="panel" id="t13" role="tabpanel">
+<section class="panel" id="t13" hidden role="tabpanel">
   <div class="eyebrow" data-i="tab13"></div>
   <h2 data-i="h13"></h2>
   <div class="btnrow" style="margin-bottom:12px"><button type="button" class="btn" id="stepBtn" data-i="a13b"></button><button type="button" class="btn" id="stepReset" data-i="a13r"></button><span class="small" id="stepHint" data-i="a13h"></span></div>
@@ -551,7 +580,7 @@ footer{font-size:13px;color:var(--muted);margin-top:30px}
 </section>
 
 <!-- 14 -->
-<section class="panel" id="t14" role="tabpanel">
+<section class="panel" id="t14" hidden role="tabpanel">
   <div class="eyebrow" data-i="tab14"></div>
   <h2 data-i="h14"></h2>
   <div class="cols">
@@ -571,7 +600,7 @@ footer{font-size:13px;color:var(--muted);margin-top:30px}
 </section>
 
 <!-- 15 -->
-<section class="panel" id="t15" role="tabpanel">
+<section class="panel" id="t15" hidden role="tabpanel">
   <div class="eyebrow" data-i="tab15"></div>
   <h2 data-i="h15"></h2>
   <div data-i="P15a"></div>
@@ -2571,6 +2600,149 @@ T.hi.ytNote="वीडियो चलाने के लिए क्लिक
 T.kn.ytNote="ವೀಡಿಯೊ ಪ್ಲೇ ಮಾಡಲು ಕ್ಲಿಕ್ ಮಾಡಿ. ಪುಟವನ್ನು ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿ (ಸಂಸ್ಥೆಯ ಸೈಟ್, LMS ಅಥವಾ ಲೋಕಲ್ ಸರ್ವರ್) ಹೋಸ್ಟ್ ಮಾಡಿದಾಗ ಪುಟದೊಳಗೇ ಪ್ಲೇ ಆಗುತ್ತದೆ. ಫೈಲ್ ಆಗಿ ಅಥವಾ Claude ನಲ್ಲಿ ತೆರೆದಾಗ YouTube ಎಂಬೆಡ್ ಅನುಮತಿಸದ ಕಾರಣ ಹೊಸ ಟ್ಯಾಬ್‌ನಲ್ಲಿ YouTube ನಲ್ಲಿ ತೆರೆಯುತ್ತದೆ.";
 T.ta.ytNote="வீடியோவை இயக்க கிளிக் செய்யுங்கள். பக்கம் ஒரு இணையதளத்தில் (நிறுவன தளம், LMS அல்லது லோக்கல் சர்வர்) ஹோஸ்ட் செய்யப்படும்போது பக்கத்துக்குள்ளேயே இயங்கும். கோப்பாக அல்லது Claude-ல் திறக்கும்போது YouTube உட்பொதிவை அனுமதிக்காததால் புதிய டேபில் YouTube-ல் திறக்கும்.";
 
+Object.assign(T.en,{t4bhpk:"N = speed (rpm) · T = shaft torque (N·m) · 1 HP = 746 W",
+t4bhp:"Output power depends on both speed and torque. If the drive holds the torque constant and varies the speed, the power changes in proportion to speed. So the real question becomes: how to change the speed?",
+t4bhpH:"Worked example · 4-pole motor, 50 N·m load",t4bhpS:"At half speed (720 rpm, same 50 N·m): P = 2 × 3.14 × 720 × 50 / 60 = 3768 W ≈ 5.05 HP",
+t4bhpR:"Same torque, half the speed → half the power.",
+t4scalar:"Keeping V/f constant is called <b>scalar control</b>. For a 415 V, 50 Hz motor: 415 / 50 ≈ 8.3 V/Hz. For a 240 V motor: 240 / 50 = 4.8 V/Hz."});
+Object.assign(T.ml,{t4bhpk:"N = സ്പീഡ് (rpm) · T = ഷാഫ്റ്റ് ടോർക്ക് (N·m) · 1 HP = 746 W",
+t4bhp:"ഔട്ട്പുട്ട് പവർ സ്പീഡിനെയും ടോർക്കിനെയും ആശ്രയിക്കുന്നു. ഡ്രൈവ് ടോർക്ക് സ്ഥിരമാക്കി സ്പീഡ് മാറ്റിയാൽ പവർ സ്പീഡിന് ആനുപാതികമായി മാറും. അതിനാൽ യഥാർത്ഥ ചോദ്യം: സ്പീഡ് എങ്ങനെ മാറ്റും?",
+t4bhpH:"ഉദാഹരണം · 4-പോൾ മോട്ടോർ, 50 N·m ലോഡ്",t4bhpS:"പകുതി സ്പീഡിൽ (720 rpm, അതേ 50 N·m): P = 2 × 3.14 × 720 × 50 / 60 = 3768 W ≈ 5.05 HP",
+t4bhpR:"അതേ ടോർക്ക്, പകുതി സ്പീഡ് → പകുതി പവർ.",
+t4scalar:"V/f സ്ഥിരമാക്കുന്നതിനെ <b>സ്കേലർ കൺട്രോൾ</b> എന്ന് പറയുന്നു. 415 V, 50 Hz മോട്ടോറിന്: 415 / 50 ≈ 8.3 V/Hz. 240 V മോട്ടോറിന്: 240 / 50 = 4.8 V/Hz."});
+Object.assign(T.hi,{t4bhpk:"N = स्पीड (rpm) · T = शाफ्ट टॉर्क (N·m) · 1 HP = 746 W",
+t4bhp:"आउटपुट पावर स्पीड और टॉर्क दोनों पर निर्भर है। यदि ड्राइव टॉर्क स्थिर रखकर स्पीड बदले, तो पावर स्पीड के अनुपात में बदलती है। इसलिए असली प्रश्न है: स्पीड कैसे बदलें?",
+t4bhpH:"उदाहरण · 4-पोल मोटर, 50 N·m लोड",t4bhpS:"आधी स्पीड पर (720 rpm, वही 50 N·m): P = 2 × 3.14 × 720 × 50 / 60 = 3768 W ≈ 5.05 HP",
+t4bhpR:"वही टॉर्क, आधी स्पीड → आधी पावर।",
+t4scalar:"V/f को स्थिर रखना <b>स्केलर कंट्रोल</b> कहलाता है। 415 V, 50 Hz मोटर के लिए: 415 / 50 ≈ 8.3 V/Hz। 240 V मोटर के लिए: 240 / 50 = 4.8 V/Hz।"});
+Object.assign(T.kn,{t4bhpk:"N = ವೇಗ (rpm) · T = ಶಾಫ್ಟ್ ಟಾರ್ಕ್ (N·m) · 1 HP = 746 W",
+t4bhp:"ಔಟ್‌ಪುಟ್ ಪವರ್ ವೇಗ ಮತ್ತು ಟಾರ್ಕ್ ಎರಡನ್ನೂ ಅವಲಂಬಿಸಿದೆ. ಡ್ರೈವ್ ಟಾರ್ಕ್ ಸ್ಥಿರವಾಗಿಟ್ಟು ವೇಗ ಬದಲಿಸಿದರೆ, ಪವರ್ ವೇಗಕ್ಕೆ ಅನುಪಾತವಾಗಿ ಬದಲಾಗುತ್ತದೆ. ಆದ್ದರಿಂದ ನಿಜವಾದ ಪ್ರಶ್ನೆ: ವೇಗ ಹೇಗೆ ಬದಲಿಸುವುದು?",
+t4bhpH:"ಉದಾಹರಣೆ · 4-ಪೋಲ್ ಮೋಟಾರ್, 50 N·m ಲೋಡ್",t4bhpS:"ಅರ್ಧ ವೇಗದಲ್ಲಿ (720 rpm, ಅದೇ 50 N·m): P = 2 × 3.14 × 720 × 50 / 60 = 3768 W ≈ 5.05 HP",
+t4bhpR:"ಅದೇ ಟಾರ್ಕ್, ಅರ್ಧ ವೇಗ → ಅರ್ಧ ಪವರ್.",
+t4scalar:"V/f ಸ್ಥಿರವಾಗಿಡುವುದನ್ನು <b>ಸ್ಕೇಲರ್ ನಿಯಂತ್ರಣ</b> ಎನ್ನುತ್ತಾರೆ. 415 V, 50 Hz ಮೋಟಾರ್‌ಗೆ: 415 / 50 ≈ 8.3 V/Hz. 240 V ಮೋಟಾರ್‌ಗೆ: 240 / 50 = 4.8 V/Hz."});
+Object.assign(T.ta,{t4bhpk:"N = வேகம் (rpm) · T = ஷாஃப்ட் டார்க் (N·m) · 1 HP = 746 W",
+t4bhp:"வெளியீட்டுத் திறன் வேகம், டார்க் இரண்டையும் சார்ந்தது. டிரைவ் டார்க்கை நிலையாக வைத்து வேகத்தை மாற்றினால், திறன் வேகத்துக்கு விகிதமாக மாறும். எனவே உண்மையான கேள்வி: வேகத்தை எப்படி மாற்றுவது?",
+t4bhpH:"எடுத்துக்காட்டு · 4-போல் மோட்டார், 50 N·m சுமை",t4bhpS:"பாதி வேகத்தில் (720 rpm, அதே 50 N·m): P = 2 × 3.14 × 720 × 50 / 60 = 3768 W ≈ 5.05 HP",
+t4bhpR:"அதே டார்க், பாதி வேகம் → பாதி திறன்.",
+t4scalar:"V/f-ஐ நிலையாக வைப்பது <b>ஸ்கேலர் கட்டுப்பாடு</b> எனப்படும். 415 V, 50 Hz மோட்டாருக்கு: 415 / 50 ≈ 8.3 V/Hz. 240 V மோட்டாருக்கு: 240 / 50 = 4.8 V/Hz."});
+
+Object.assign(T.en,{
+focH:"Field-Oriented Control (FOC), step by step",
+focP:"In a DC motor the brushes keep the armature current at 90° to the field, so torque is simply proportional to current. FOC does the same job electronically: it controls the stator current as a vector, measured from the rotor's own magnetic axis.",
+focS1:"<b>Measure.</b> Read two phase currents (i<sub>c</sub> = −i<sub>a</sub> − i<sub>b</sub>) and the rotor angle θ from an encoder, Hall sensors or a sensorless estimate.",
+focS2:"<b>Clarke transform.</b> Convert the three phase currents into two fixed axes, α and β.",
+focS3:"<b>Park transform.</b> Rotate α and β by θ to get <b>i<sub>d</sub></b> (along the magnet, the flux axis) and <b>i<sub>q</sub></b> (90° ahead, the torque axis). In the rotor's frame these are steady, DC-like values.",
+focS4:"<b>Two PI controllers.</b> Hold i<sub>d</sub> at zero (or negative for field weakening at high speed). Set i<sub>q</sub> from the speed loop: more load torque needs more i<sub>q</sub>.",
+focS5:"<b>Back to the motor.</b> Inverse Park gives the α-β voltage, SVPWM turns it into six IGBT gate signals, and the loop repeats every PWM cycle, thousands of times a second.",
+focKey:"Torque ∝ i<sub>q</sub>. Keeping the current at 90° to the rotor field gives the most torque per ampere: the DC-motor idea, done electronically.",
+focT:"Rotor frame",
+focG1:"d-axis (magnet N)",focG2:"q-axis",focG3:"Stator current vector",focG4:"i<sub>q</sub> (torque)",
+focL1:"Load torque → i<sub>q</sub>",focL2:"Field weakening → i<sub>d</sub>",
+focN:"The phase currents i<sub>a</sub>, i<sub>b</sub>, i<sub>c</sub> are AC and keep changing, but seen from the rotor, i<sub>d</sub> and i<sub>q</sub> stay steady. That is why a simple PI controller can hold them. Raise the load and only i<sub>q</sub> grows.",
+svH:"Scalar (V/f) vs vector (FOC) control",svC1:"Scalar (V/f)",svC2:"Vector (FOC)",
+svR1:"Controls",svR1a:"Size of V and f only",svR1b:"Size and angle of the current",
+svR2:"Flux and torque",svR2a:"Not separated; flux held only approximately",svR2b:"Controlled separately: i<sub>d</sub> = flux, i<sub>q</sub> = torque",
+svR3:"Feedback",svR3a:"Usually none (open loop)",svR3b:"Rotor position or speed: encoder, Hall or sensorless",
+svR4:"Low-speed torque",svR4a:"Weak below about 5–10 Hz; drives add voltage boost",svR4b:"Full torque down to near zero speed",
+svR5:"Speed accuracy",svR5a:"Slip changes with load",svR5b:"Tight speed and torque control",
+svR6:"Typical use",svR6a:"Fans, pumps, conveyors, general-purpose VFDs",svR6b:"Inverter AC compressors (PMSM), lifts, EVs, servo drives"});
+Object.assign(T.ml,{
+focH:"Field-Oriented Control (FOC), ഘട്ടം ഘട്ടമായി",
+focP:"DC മോട്ടോറിൽ ബ്രഷുകൾ ആർമേച്ചർ കറന്റിനെ ഫീൽഡിന് 90°-ൽ നിലനിർത്തുന്നു; അതിനാൽ ടോർക്ക് കറന്റിന് ആനുപാതികം. FOC ഇതേ ജോലി ഇലക്ട്രോണിക്കായി ചെയ്യുന്നു: റോട്ടറിന്റെ കാന്തിക അക്ഷത്തിൽ നിന്ന് അളന്ന് സ്റ്റേറ്റർ കറന്റിനെ ഒരു വെക്ടറായി നിയന്ത്രിക്കുന്നു.",
+focS1:"<b>അളക്കുക.</b> രണ്ട് ഫേസ് കറന്റുകൾ (i<sub>c</sub> = −i<sub>a</sub> − i<sub>b</sub>), എൻകോഡർ/Hall സെൻസർ/സെൻസർലെസ് അനുമാനത്തിൽ നിന്ന് റോട്ടർ കോൺ θ.",
+focS2:"<b>Clarke ട്രാൻസ്ഫോം.</b> മൂന്ന് ഫേസ് കറന്റുകളെ രണ്ട് സ്ഥിര അക്ഷങ്ങളായ α, β ആക്കുന്നു.",
+focS3:"<b>Park ട്രാൻസ്ഫോം.</b> α, β-യെ θ കൊണ്ട് തിരിച്ച് <b>i<sub>d</sub></b> (കാന്തത്തിന്റെ ദിശ, ഫ്ലക്സ് അക്ഷം), <b>i<sub>q</sub></b> (90° മുന്നിൽ, ടോർക്ക് അക്ഷം) ലഭിക്കുന്നു. റോട്ടറിന്റെ കാഴ്ചയിൽ ഇവ സ്ഥിരമായ, DC പോലുള്ള മൂല്യങ്ങളാണ്.",
+focS4:"<b>രണ്ട് PI കൺട്രോളറുകൾ.</b> i<sub>d</sub> പൂജ്യത്തിൽ (ഉയർന്ന സ്പീഡിൽ ഫീൽഡ് വീക്കനിംഗിന് നെഗറ്റീവ്). i<sub>q</sub> സ്പീഡ് ലൂപ്പ് നിശ്ചയിക്കുന്നു: ലോഡ് ടോർക്ക് കൂടിയാൽ i<sub>q</sub> കൂടണം.",
+focS5:"<b>തിരികെ മോട്ടോറിലേക്ക്.</b> Inverse Park α-β വോൾട്ടേജ് നൽകുന്നു, SVPWM അതിനെ ആറ് IGBT ഗേറ്റ് സിഗ്നലുകളാക്കുന്നു; ഓരോ PWM സൈക്കിളിലും, സെക്കൻഡിൽ ആയിരക്കണക്കിന് തവണ ലൂപ്പ് ആവർത്തിക്കുന്നു.",
+focKey:"ടോർക്ക് ∝ i<sub>q</sub>. കറന്റിനെ റോട്ടർ ഫീൽഡിന് 90°-ൽ നിലനിർത്തിയാൽ ആമ്പിയറിന് പരമാവധി ടോർക്ക്: DC മോട്ടോറിന്റെ ആശയം, ഇലക്ട്രോണിക്കായി.",
+focT:"റോട്ടർ ഫ്രെയിം",
+focG1:"d-അക്ഷം (കാന്തം N)",focG2:"q-അക്ഷം",focG3:"സ്റ്റേറ്റർ കറന്റ് വെക്ടർ",focG4:"i<sub>q</sub> (ടോർക്ക്)",
+focL1:"ലോഡ് ടോർക്ക് → i<sub>q</sub>",focL2:"ഫീൽഡ് വീക്കനിംഗ് → i<sub>d</sub>",
+focN:"ഫേസ് കറന്റുകൾ i<sub>a</sub>, i<sub>b</sub>, i<sub>c</sub> AC ആണ്, തുടർച്ചയായി മാറുന്നു; പക്ഷേ റോട്ടറിൽ നിന്ന് നോക്കുമ്പോൾ i<sub>d</sub>, i<sub>q</sub> സ്ഥിരം. അതുകൊണ്ടാണ് ലളിതമായ PI കൺട്രോളറിന് അവയെ നിലനിർത്താനാവുന്നത്. ലോഡ് കൂട്ടിയാൽ i<sub>q</sub> മാത്രം കൂടുന്നു.",
+svH:"സ്കേലർ (V/f) vs വെക്ടർ (FOC) കൺട്രോൾ",svC1:"സ്കേലർ (V/f)",svC2:"വെക്ടർ (FOC)",
+svR1:"നിയന്ത്രിക്കുന്നത്",svR1a:"V, f എന്നിവയുടെ അളവ് മാത്രം",svR1b:"കറന്റിന്റെ അളവും കോണും",
+svR2:"ഫ്ലക്സും ടോർക്കും",svR2a:"വേർതിരിക്കുന്നില്ല; ഫ്ലക്സ് ഏകദേശം മാത്രം",svR2b:"വെവ്വേറെ: i<sub>d</sub> = ഫ്ലക്സ്, i<sub>q</sub> = ടോർക്ക്",
+svR3:"ഫീഡ്ബാക്ക്",svR3a:"സാധാരണ ഇല്ല (ഓപ്പൺ ലൂപ്പ്)",svR3b:"റോട്ടർ സ്ഥാനം/സ്പീഡ്: എൻകോഡർ, Hall അല്ലെങ്കിൽ സെൻസർലെസ്",
+svR4:"കുറഞ്ഞ സ്പീഡിലെ ടോർക്ക്",svR4a:"ഏകദേശം 5–10 Hz-ന് താഴെ ദുർബലം; വോൾട്ടേജ് ബൂസ്റ്റ് ചേർക്കുന്നു",svR4b:"ഏതാണ്ട് പൂജ്യം സ്പീഡ് വരെ മുഴുവൻ ടോർക്ക്",
+svR5:"സ്പീഡ് കൃത്യത",svR5a:"ലോഡിനൊപ്പം സ്ലിപ്പ് മാറുന്നു",svR5b:"കൃത്യമായ സ്പീഡ്, ടോർക്ക് നിയന്ത്രണം",
+svR6:"സാധാരണ ഉപയോഗം",svR6a:"ഫാൻ, പമ്പ്, കൺവെയർ, പൊതു VFD-കൾ",svR6b:"ഇൻവെർട്ടർ AC കംപ്രസർ (PMSM), ലിഫ്റ്റ്, EV, സെർവോ ഡ്രൈവ്"});
+Object.assign(T.hi,{
+focH:"Field-Oriented Control (FOC), चरण दर चरण",
+focP:"DC मोटर में ब्रश आर्मेचर करंट को फील्ड से 90° पर रखते हैं, इसलिए टॉर्क सीधे करंट के अनुपात में होता है। FOC यही काम इलेक्ट्रॉनिक रूप से करता है: रोटर के अपने चुंबकीय अक्ष से मापकर स्टेटर करंट को वेक्टर के रूप में नियंत्रित करता है।",
+focS1:"<b>मापें।</b> दो फेज़ करंट (i<sub>c</sub> = −i<sub>a</sub> − i<sub>b</sub>) और एनकोडर, Hall सेंसर या सेंसरलेस अनुमान से रोटर कोण θ।",
+focS2:"<b>Clarke ट्रांसफॉर्म।</b> तीन फेज़ करंट को दो स्थिर अक्षों α और β में बदलें।",
+focS3:"<b>Park ट्रांसफॉर्म।</b> α, β को θ से घुमाकर <b>i<sub>d</sub></b> (चुंबक की दिशा, फ्लक्स अक्ष) और <b>i<sub>q</sub></b> (90° आगे, टॉर्क अक्ष) प्राप्त करें। रोटर के फ्रेम में ये स्थिर, DC जैसे मान हैं।",
+focS4:"<b>दो PI कंट्रोलर।</b> i<sub>d</sub> को शून्य पर रखें (ऊँची स्पीड पर फील्ड वीकनिंग के लिए ऋणात्मक)। i<sub>q</sub> स्पीड लूप तय करता है: अधिक लोड टॉर्क के लिए अधिक i<sub>q</sub>।",
+focS5:"<b>वापस मोटर तक।</b> Inverse Park α-β वोल्टेज देता है, SVPWM उसे छह IGBT गेट सिग्नल में बदलता है; हर PWM साइकिल में, सेकंड में हज़ारों बार लूप दोहराता है।",
+focKey:"टॉर्क ∝ i<sub>q</sub>। करंट को रोटर फील्ड से 90° पर रखने से प्रति एम्पियर अधिकतम टॉर्क मिलता है: DC मोटर का विचार, इलेक्ट्रॉनिक रूप से।",
+focT:"रोटर फ्रेम",
+focG1:"d-अक्ष (चुंबक N)",focG2:"q-अक्ष",focG3:"स्टेटर करंट वेक्टर",focG4:"i<sub>q</sub> (टॉर्क)",
+focL1:"लोड टॉर्क → i<sub>q</sub>",focL2:"फील्ड वीकनिंग → i<sub>d</sub>",
+focN:"फेज़ करंट i<sub>a</sub>, i<sub>b</sub>, i<sub>c</sub> AC हैं और बदलते रहते हैं, पर रोटर से देखने पर i<sub>d</sub> और i<sub>q</sub> स्थिर रहते हैं। इसीलिए साधारण PI कंट्रोलर उन्हें थाम सकता है। लोड बढ़ाएँ तो केवल i<sub>q</sub> बढ़ता है।",
+svH:"स्केलर (V/f) बनाम वेक्टर (FOC) कंट्रोल",svC1:"स्केलर (V/f)",svC2:"वेक्टर (FOC)",
+svR1:"नियंत्रित करता है",svR1a:"केवल V और f का परिमाण",svR1b:"करंट का परिमाण और कोण",
+svR2:"फ्लक्स और टॉर्क",svR2a:"अलग नहीं; फ्लक्स केवल लगभग",svR2b:"अलग-अलग: i<sub>d</sub> = फ्लक्स, i<sub>q</sub> = टॉर्क",
+svR3:"फीडबैक",svR3a:"आमतौर पर नहीं (ओपन लूप)",svR3b:"रोटर स्थिति/स्पीड: एनकोडर, Hall या सेंसरलेस",
+svR4:"कम स्पीड पर टॉर्क",svR4a:"लगभग 5–10 Hz से नीचे कमज़ोर; वोल्टेज बूस्ट जोड़ते हैं",svR4b:"लगभग शून्य स्पीड तक पूरा टॉर्क",
+svR5:"स्पीड सटीकता",svR5a:"लोड के साथ स्लिप बदलती है",svR5b:"सटीक स्पीड और टॉर्क नियंत्रण",
+svR6:"सामान्य उपयोग",svR6a:"फैन, पंप, कन्वेयर, सामान्य VFD",svR6b:"इन्वर्टर AC कंप्रेसर (PMSM), लिफ्ट, EV, सर्वो ड्राइव"});
+Object.assign(T.kn,{
+focH:"Field-Oriented Control (FOC), ಹಂತ ಹಂತವಾಗಿ",
+focP:"DC ಮೋಟಾರ್‌ನಲ್ಲಿ ಬ್ರಷ್‌ಗಳು ಆರ್ಮೇಚರ್ ಕರೆಂಟ್ ಅನ್ನು ಕ್ಷೇತ್ರಕ್ಕೆ 90° ನಲ್ಲಿ ಇಡುತ್ತವೆ; ಆದ್ದರಿಂದ ಟಾರ್ಕ್ ಕರೆಂಟ್‌ಗೆ ಅನುಪಾತ. FOC ಇದೇ ಕೆಲಸವನ್ನು ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಆಗಿ ಮಾಡುತ್ತದೆ: ರೋಟರ್‌ನ ಕಾಂತೀಯ ಅಕ್ಷದಿಂದ ಅಳೆದು ಸ್ಟೇಟರ್ ಕರೆಂಟ್ ಅನ್ನು ವೆಕ್ಟರ್ ಆಗಿ ನಿಯಂತ್ರಿಸುತ್ತದೆ.",
+focS1:"<b>ಅಳೆಯಿರಿ.</b> ಎರಡು ಫೇಸ್ ಕರೆಂಟ್ (i<sub>c</sub> = −i<sub>a</sub> − i<sub>b</sub>) ಮತ್ತು ಎನ್‌ಕೋಡರ್, Hall ಸೆನ್ಸರ್ ಅಥವಾ ಸೆನ್ಸರ್‌ಲೆಸ್ ಅಂದಾಜಿನಿಂದ ರೋಟರ್ ಕೋನ θ.",
+focS2:"<b>Clarke ರೂಪಾಂತರ.</b> ಮೂರು ಫೇಸ್ ಕರೆಂಟ್‌ಗಳನ್ನು ಎರಡು ಸ್ಥಿರ ಅಕ್ಷಗಳು α, β ಆಗಿ ಬದಲಿಸಿ.",
+focS3:"<b>Park ರೂಪಾಂತರ.</b> α, β ಅನ್ನು θ ಯಿಂದ ತಿರುಗಿಸಿ <b>i<sub>d</sub></b> (ಮ್ಯಾಗ್ನೆಟ್ ದಿಕ್ಕು, ಫ್ಲಕ್ಸ್ ಅಕ್ಷ) ಮತ್ತು <b>i<sub>q</sub></b> (90° ಮುಂದೆ, ಟಾರ್ಕ್ ಅಕ್ಷ) ಪಡೆಯಿರಿ. ರೋಟರ್ ಚೌಕಟ್ಟಿನಲ್ಲಿ ಇವು ಸ್ಥಿರ, DC ಯಂತಹ ಮೌಲ್ಯಗಳು.",
+focS4:"<b>ಎರಡು PI ಕಂಟ್ರೋಲರ್‌ಗಳು.</b> i<sub>d</sub> ಶೂನ್ಯದಲ್ಲಿ (ಹೆಚ್ಚು ವೇಗದಲ್ಲಿ ಫೀಲ್ಡ್ ವೀಕನಿಂಗ್‌ಗೆ ಋಣ). i<sub>q</sub> ಅನ್ನು ವೇಗ ಲೂಪ್ ನಿರ್ಧರಿಸುತ್ತದೆ: ಹೆಚ್ಚು ಲೋಡ್ ಟಾರ್ಕ್‌ಗೆ ಹೆಚ್ಚು i<sub>q</sub>.",
+focS5:"<b>ಮತ್ತೆ ಮೋಟಾರ್‌ಗೆ.</b> Inverse Park α-β ವೋಲ್ಟೇಜ್ ನೀಡುತ್ತದೆ, SVPWM ಅದನ್ನು ಆರು IGBT ಗೇಟ್ ಸಿಗ್ನಲ್‌ಗಳಾಗಿಸುತ್ತದೆ; ಪ್ರತಿ PWM ಚಕ್ರದಲ್ಲಿ, ಸೆಕೆಂಡಿಗೆ ಸಾವಿರಾರು ಬಾರಿ ಲೂಪ್ ಪುನರಾವರ್ತನೆ.",
+focKey:"ಟಾರ್ಕ್ ∝ i<sub>q</sub>. ಕರೆಂಟ್ ಅನ್ನು ರೋಟರ್ ಕ್ಷೇತ್ರಕ್ಕೆ 90° ನಲ್ಲಿ ಇಟ್ಟರೆ ಪ್ರತಿ ಆಂಪಿಯರ್‌ಗೆ ಗರಿಷ್ಠ ಟಾರ್ಕ್: DC ಮೋಟಾರ್ ಕಲ್ಪನೆ, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಆಗಿ.",
+focT:"ರೋಟರ್ ಚೌಕಟ್ಟು",
+focG1:"d-ಅಕ್ಷ (ಮ್ಯಾಗ್ನೆಟ್ N)",focG2:"q-ಅಕ್ಷ",focG3:"ಸ್ಟೇಟರ್ ಕರೆಂಟ್ ವೆಕ್ಟರ್",focG4:"i<sub>q</sub> (ಟಾರ್ಕ್)",
+focL1:"ಲೋಡ್ ಟಾರ್ಕ್ → i<sub>q</sub>",focL2:"ಫೀಲ್ಡ್ ವೀಕನಿಂಗ್ → i<sub>d</sub>",
+focN:"ಫೇಸ್ ಕರೆಂಟ್‌ಗಳು i<sub>a</sub>, i<sub>b</sub>, i<sub>c</sub> AC, ಬದಲಾಗುತ್ತಲೇ ಇರುತ್ತವೆ; ಆದರೆ ರೋಟರ್‌ನಿಂದ ನೋಡಿದರೆ i<sub>d</sub>, i<sub>q</sub> ಸ್ಥಿರ. ಅದಕ್ಕೇ ಸರಳ PI ಕಂಟ್ರೋಲರ್ ಅವನ್ನು ಹಿಡಿದಿಡಬಲ್ಲದು. ಲೋಡ್ ಹೆಚ್ಚಿಸಿದರೆ i<sub>q</sub> ಮಾತ್ರ ಹೆಚ್ಚುತ್ತದೆ.",
+svH:"ಸ್ಕೇಲರ್ (V/f) vs ವೆಕ್ಟರ್ (FOC) ನಿಯಂತ್ರಣ",svC1:"ಸ್ಕೇಲರ್ (V/f)",svC2:"ವೆಕ್ಟರ್ (FOC)",
+svR1:"ನಿಯಂತ್ರಿಸುವುದು",svR1a:"V ಮತ್ತು f ನ ಪ್ರಮಾಣ ಮಾತ್ರ",svR1b:"ಕರೆಂಟ್‌ನ ಪ್ರಮಾಣ ಮತ್ತು ಕೋನ",
+svR2:"ಫ್ಲಕ್ಸ್ ಮತ್ತು ಟಾರ್ಕ್",svR2a:"ಬೇರ್ಪಡಿಸಿಲ್ಲ; ಫ್ಲಕ್ಸ್ ಅಂದಾಜಾಗಿ ಮಾತ್ರ",svR2b:"ಬೇರೆ ಬೇರೆ: i<sub>d</sub> = ಫ್ಲಕ್ಸ್, i<sub>q</sub> = ಟಾರ್ಕ್",
+svR3:"ಫೀಡ್‌ಬ್ಯಾಕ್",svR3a:"ಸಾಮಾನ್ಯವಾಗಿ ಇಲ್ಲ (ಓಪನ್ ಲೂಪ್)",svR3b:"ರೋಟರ್ ಸ್ಥಾನ/ವೇಗ: ಎನ್‌ಕೋಡರ್, Hall ಅಥವಾ ಸೆನ್ಸರ್‌ಲೆಸ್",
+svR4:"ಕಡಿಮೆ ವೇಗದ ಟಾರ್ಕ್",svR4a:"ಸುಮಾರು 5–10 Hz ಕೆಳಗೆ ದುರ್ಬಲ; ವೋಲ್ಟೇಜ್ ಬೂಸ್ಟ್ ಸೇರಿಸುತ್ತಾರೆ",svR4b:"ಬಹುತೇಕ ಶೂನ್ಯ ವೇಗದವರೆಗೆ ಪೂರ್ಣ ಟಾರ್ಕ್",
+svR5:"ವೇಗ ನಿಖರತೆ",svR5a:"ಲೋಡ್ ಜೊತೆ ಸ್ಲಿಪ್ ಬದಲಾಗುತ್ತದೆ",svR5b:"ನಿಖರ ವೇಗ ಮತ್ತು ಟಾರ್ಕ್ ನಿಯಂತ್ರಣ",
+svR6:"ಸಾಮಾನ್ಯ ಬಳಕೆ",svR6a:"ಫ್ಯಾನ್, ಪಂಪ್, ಕನ್ವೇಯರ್, ಸಾಮಾನ್ಯ VFD",svR6b:"ಇನ್ವರ್ಟರ್ AC ಕಂಪ್ರೆಸರ್ (PMSM), ಲಿಫ್ಟ್, EV, ಸರ್ವೋ ಡ್ರೈವ್"});
+Object.assign(T.ta,{
+focH:"Field-Oriented Control (FOC), படிப்படியாக",
+focP:"DC மோட்டாரில் பிரஷ்கள் ஆர்மேச்சர் மின்னோட்டத்தைப் புலத்துக்கு 90°-ல் வைக்கின்றன; எனவே டார்க் மின்னோட்டத்துக்கு நேர் விகிதம். FOC இதையே மின்னணு முறையில் செய்கிறது: ரோட்டரின் காந்த அச்சிலிருந்து அளந்து ஸ்டேட்டர் மின்னோட்டத்தை ஒரு வெக்டராகக் கட்டுப்படுத்துகிறது.",
+focS1:"<b>அளவிடுக.</b> இரண்டு ஃபேஸ் மின்னோட்டங்கள் (i<sub>c</sub> = −i<sub>a</sub> − i<sub>b</sub>), மற்றும் என்கோடர், Hall சென்சார் அல்லது சென்சார்லெஸ் மதிப்பீட்டிலிருந்து ரோட்டர் கோணம் θ.",
+focS2:"<b>Clarke உருமாற்றம்.</b> மூன்று ஃபேஸ் மின்னோட்டங்களை இரண்டு நிலையான அச்சுகள் α, β ஆக மாற்றுக.",
+focS3:"<b>Park உருமாற்றம்.</b> α, β-ஐ θ அளவு சுழற்றி <b>i<sub>d</sub></b> (காந்தத் திசை, ஃப்ளக்ஸ் அச்சு), <b>i<sub>q</sub></b> (90° முன்னால், டார்க் அச்சு) பெறுக. ரோட்டரின் சட்டகத்தில் இவை நிலையான, DC போன்ற மதிப்புகள்.",
+focS4:"<b>இரண்டு PI கன்ட்ரோலர்கள்.</b> i<sub>d</sub>-ஐ பூஜ்யத்தில் (அதிக வேகத்தில் ஃபீல்ட் வீக்கனிங்குக்கு எதிர்மறை). i<sub>q</sub>-ஐ வேக லூப் அமைக்கிறது: அதிக சுமை டார்க்குக்கு அதிக i<sub>q</sub>.",
+focS5:"<b>மீண்டும் மோட்டாருக்கு.</b> Inverse Park α-β மின்னழுத்தம் தருகிறது, SVPWM அதை ஆறு IGBT கேட் சிக்னல்களாக்குகிறது; ஒவ்வொரு PWM சுழற்சியிலும், வினாடிக்கு ஆயிரக்கணக்கான முறை லூப் மீண்டும் நடக்கிறது.",
+focKey:"டார்க் ∝ i<sub>q</sub>. மின்னோட்டத்தை ரோட்டர் புலத்துக்கு 90°-ல் வைத்தால் ஆம்பியருக்கு அதிகபட்ச டார்க்: DC மோட்டார் யோசனை, மின்னணு முறையில்.",
+focT:"ரோட்டர் சட்டகம்",
+focG1:"d-அச்சு (காந்தம் N)",focG2:"q-அச்சு",focG3:"ஸ்டேட்டர் மின்னோட்ட வெக்டர்",focG4:"i<sub>q</sub> (டார்க்)",
+focL1:"சுமை டார்க் → i<sub>q</sub>",focL2:"ஃபீல்ட் வீக்கனிங் → i<sub>d</sub>",
+focN:"ஃபேஸ் மின்னோட்டங்கள் i<sub>a</sub>, i<sub>b</sub>, i<sub>c</sub> AC, தொடர்ந்து மாறுகின்றன; ஆனால் ரோட்டரிலிருந்து பார்த்தால் i<sub>d</sub>, i<sub>q</sub> நிலையானவை. அதனால்தான் எளிய PI கன்ட்ரோலர் அவற்றைப் பிடித்து வைக்க முடிகிறது. சுமையைக் கூட்டினால் i<sub>q</sub> மட்டும் கூடுகிறது.",
+svH:"ஸ்கேலர் (V/f) vs வெக்டர் (FOC) கட்டுப்பாடு",svC1:"ஸ்கேலர் (V/f)",svC2:"வெக்டர் (FOC)",
+svR1:"கட்டுப்படுத்துவது",svR1a:"V, f-ன் அளவு மட்டும்",svR1b:"மின்னோட்டத்தின் அளவும் கோணமும்",
+svR2:"ஃப்ளக்ஸும் டார்க்கும்",svR2a:"பிரிக்கப்படவில்லை; ஃப்ளக்ஸ் தோராயமாக மட்டும்",svR2b:"தனித்தனியாக: i<sub>d</sub> = ஃப்ளக்ஸ், i<sub>q</sub> = டார்க்",
+svR3:"பின்னூட்டம்",svR3a:"வழக்கமாக இல்லை (ஓப்பன் லூப்)",svR3b:"ரோட்டர் நிலை/வேகம்: என்கோடர், Hall அல்லது சென்சார்லெஸ்",
+svR4:"குறைந்த வேக டார்க்",svR4a:"சுமார் 5–10 Hz-க்குக் கீழ் பலவீனம்; மின்னழுத்த பூஸ்ட் சேர்க்கிறார்கள்",svR4b:"கிட்டத்தட்ட பூஜ்ய வேகம் வரை முழு டார்க்",
+svR5:"வேகத் துல்லியம்",svR5a:"சுமையுடன் ஸ்லிப் மாறும்",svR5b:"துல்லியமான வேக, டார்க் கட்டுப்பாடு",
+svR6:"வழக்கமான பயன்பாடு",svR6a:"ஃபேன், பம்ப், கன்வேயர், பொது VFD-கள்",svR6b:"இன்வெர்ட்டர் AC கம்ப்ரசர் (PMSM), லிஃப்ட், EV, சர்வோ டிரைவ்"});
+
+Object.assign(T.en,{title2:"Inverter AC Drives: Advanced Module",sub2:"Inside the drive and the compressor motor: hardware, FOC, worked numericals, fault-finding, commissioning and R32 safety.",
+nextMod:"Next: Part 2, the Advanced module, covers drive hardware, the compressor motor and FOC, faults, troubleshooting and commissioning.",
+prereq:"Builds on Part 1 (Development): DOL starting, fan regulators, V/f control, VFD blocks, PWM and the BLDC motor."});
+Object.assign(T.ml,{title2:"ഇൻവെർട്ടർ AC ഡ്രൈവുകൾ: അഡ്വാൻസ്ഡ് മൊഡ്യൂൾ",sub2:"ഡ്രൈവിന്റെയും കംപ്രസർ മോട്ടോറിന്റെയും ഉള്ളിൽ: ഹാർഡ്‌വെയർ, FOC, ന്യൂമെറിക്കലുകൾ, ഫോൾട്ട് കണ്ടെത്തൽ, കമ്മീഷനിംഗ്, R32 സുരക്ഷ.",
+nextMod:"അടുത്തത്: ഭാഗം 2, അഡ്വാൻസ്ഡ് മൊഡ്യൂൾ – ഡ്രൈവ് ഹാർഡ്‌വെയർ, കംപ്രസർ മോട്ടോറും FOC-യും, ഫോൾട്ടുകൾ, ട്രബിൾഷൂട്ടിംഗ്, കമ്മീഷനിംഗ്.",
+prereq:"ഭാഗം 1 (വികാസം) അടിസ്ഥാനമാക്കി: DOL സ്റ്റാർട്ടിംഗ്, ഫാൻ റെഗുലേറ്റർ, V/f കൺട്രോൾ, VFD ബ്ലോക്കുകൾ, PWM, BLDC മോട്ടോർ."});
+Object.assign(T.hi,{title2:"इन्वर्टर AC ड्राइव: एडवांस्ड मॉड्यूल",sub2:"ड्राइव और कंप्रेसर मोटर के अंदर: हार्डवेयर, FOC, न्यूमेरिकल, फॉल्ट खोज, कमीशनिंग और R32 सुरक्षा।",
+nextMod:"आगे: भाग 2, एडवांस्ड मॉड्यूल – ड्राइव हार्डवेयर, कंप्रेसर मोटर और FOC, फॉल्ट, ट्रबलशूटिंग और कमीशनिंग।",
+prereq:"भाग 1 (विकास) पर आधारित: DOL स्टार्टिंग, फैन रेगुलेटर, V/f कंट्रोल, VFD ब्लॉक, PWM और BLDC मोटर।"});
+Object.assign(T.kn,{title2:"ಇನ್ವರ್ಟರ್ AC ಡ್ರೈವ್‌ಗಳು: ಅಡ್ವಾನ್ಸ್ಡ್ ಮಾಡ್ಯೂಲ್",sub2:"ಡ್ರೈವ್ ಮತ್ತು ಕಂಪ್ರೆಸರ್ ಮೋಟಾರ್ ಒಳಗೆ: ಹಾರ್ಡ್‌ವೇರ್, FOC, ಲೆಕ್ಕಗಳು, ದೋಷ ಪತ್ತೆ, ಕಮಿಷನಿಂಗ್ ಮತ್ತು R32 ಸುರಕ್ಷತೆ.",
+nextMod:"ಮುಂದೆ: ಭಾಗ 2, ಅಡ್ವಾನ್ಸ್ಡ್ ಮಾಡ್ಯೂಲ್ – ಡ್ರೈವ್ ಹಾರ್ಡ್‌ವೇರ್, ಕಂಪ್ರೆಸರ್ ಮೋಟಾರ್ ಮತ್ತು FOC, ದೋಷಗಳು, ಟ್ರಬಲ್‌ಶೂಟಿಂಗ್ ಮತ್ತು ಕಮಿಷನಿಂಗ್.",
+prereq:"ಭಾಗ 1 (ಬೆಳವಣಿಗೆ) ಆಧಾರಿತ: DOL ಸ್ಟಾರ್ಟಿಂಗ್, ಫ್ಯಾನ್ ರೆಗ್ಯುಲೇಟರ್, V/f ನಿಯಂತ್ರಣ, VFD ಬ್ಲಾಕ್‌ಗಳು, PWM ಮತ್ತು BLDC ಮೋಟಾರ್."});
+Object.assign(T.ta,{title2:"இன்வெர்ட்டர் AC டிரைவ்கள்: மேம்பட்ட தொகுதி",sub2:"டிரைவ் மற்றும் கம்ப்ரசர் மோட்டாரின் உள்ளே: வன்பொருள், FOC, கணக்குகள், பிழை கண்டறிதல், கமிஷனிங், R32 பாதுகாப்பு.",
+nextMod:"அடுத்து: பகுதி 2, மேம்பட்ட தொகுதி – டிரைவ் வன்பொருள், கம்ப்ரசர் மோட்டார் மற்றும் FOC, பிழைகள், பிழைநீக்கம், கமிஷனிங்.",
+prereq:"பகுதி 1 (வளர்ச்சி) அடிப்படையில்: DOL ஸ்டார்ட்டிங், ஃபேன் ரெகுலேட்டர், V/f கட்டுப்பாடு, VFD பகுதிகள், PWM, BLDC மோட்டார்."});
+
 T.en.foot="Prepared at NSTI Calicut. Star-rating data and charts: PIB / BEE. Motor videos: Learn Engineering on YouTube. Diagrams and animations were drawn for this lesson.";
 T.ml.foot="NSTI കോഴിക്കോട് തയ്യാറാക്കിയത്. സ്റ്റാർ റേറ്റിംഗ് ഡാറ്റയും ചാർട്ടുകളും: PIB / BEE. മോട്ടോർ വീഡിയോകൾ: YouTube-ലെ Learn Engineering. ഡയഗ്രങ്ങളും ആനിമേഷനുകളും ഈ പാഠത്തിനായി വരച്ചത്.";
 T.hi.foot="NSTI कालीकट द्वारा तैयार। स्टार-रेटिंग डेटा और चार्ट: PIB / BEE। मोटर वीडियो: YouTube पर Learn Engineering। आरेख और एनीमेशन इस पाठ के लिए बनाए गए।";
@@ -2596,8 +2768,11 @@ T.ta.t5v="ஒவ்வொரு நிலையும் அலைவடிவ�
 
 </script>
 <script>
+window.LESSON_PART="1";
 (function(){
-const TABS=['t1','t2','t3','t4','t5','t6','t7','t8','t9','t10','t11','t12','t13','t14','t15'];
+const ALL=['t1','t2','t3','t4','t5','t6','t7','t8','t9','t10','t11','t12','t13','t14','t15'];
+const PART=String(window.LESSON_PART||'all');
+const TABS=PART==='1'?ALL.slice(0,8):PART==='2'?ALL.slice(8):ALL;
 let lang='en', cur=0;
 try{const s=localStorage.getItem('vfdLang'); if(s&&T[s]) lang=s;}catch(e){}
 const t=k=>(T[lang]&&T[lang][k]!=null)?T[lang][k]:(T.en[k]!=null?T.en[k]:k);
@@ -2611,9 +2786,9 @@ const on=id=>$(id).classList.contains('on');
 function buildSteps(){
   const nav=$('steps'); nav.innerHTML='';
   TABS.forEach((id,i)=>{
-    if(i===0||i===8){const s=document.createElement('span');s.className='part';s.textContent=t(i===0?'part1':'part2');nav.appendChild(s);}
+    if(PART==='all'&&(i===0||i===8)){const s=document.createElement('span');s.className='part';s.textContent=t(i===0?'part1':'part2');nav.appendChild(s);}
     const b=document.createElement('button'); b.type='button'; b.setAttribute('role','tab'); b.dataset.k=i;
-    b.innerHTML=`<span class="n">${String(i+1).padStart(2,'0')}</span><span class="l">${t('tab'+(i+1))}</span>`;
+    b.innerHTML=`<span class="n">${String(i+1).padStart(2,'0')}</span><span class="l">${t('tab'+id.slice(1))}</span>`;
     b.setAttribute('aria-selected',i===cur); b.onclick=()=>show(i,true); nav.appendChild(b);
   });
 }
@@ -2825,6 +3000,44 @@ function drawStart(now){
   if(tt<=0.6){const a=(now/120)%6.28;c.fillStyle=css('--y');c.beginPath();c.arc(X(0.3),Y(1800),10+3*Math.sin(a),0,7);c.fill();}
 }
 
+/* ---------- 10: FOC ---------- */
+let focTh=0;
+function drawFOC(){
+  const cv=$('focCv'); if(!cv||!cv.offsetParent) return; const [c,w,h]=cv2(cv);
+  const iq=+$('focIq').value, id=+$('focId').value, Imag=Math.hypot(iq,id), del=Math.atan2(iq,id);
+  $('focIqO').textContent=iq+' %'; $('focIdO').textContent=id+' %';
+  // left: rotor frame
+  const cx=w*0.22, cy=h*0.5, Rr=Math.min(w*0.19,h*0.4);
+  c.strokeStyle=css('--line');c.lineWidth=2;c.beginPath();c.arc(cx,cy,Rr,0,7);c.stroke();
+  const ang=-focTh-Math.PI/2; // d-axis angle on screen (rotating)
+  const u=(a,l)=>[cx+l*Math.cos(a),cy+l*Math.sin(a)];
+  // magnet
+  c.save();c.translate(cx,cy);c.rotate(ang+Math.PI/2);c.fillStyle=css('--r');c.fillRect(-10,-Rr*0.6,20,Rr*0.6);c.fillStyle=css('--b');c.fillRect(-10,0,20,Rr*0.6);c.restore();
+  const ax=(a,col,dash,lab)=>{const [x,y]=u(a,Rr*1.05);c.setLineDash(dash);c.strokeStyle=css(col);c.lineWidth=1.5;c.beginPath();c.moveTo(cx,cy);c.lineTo(x,y);c.stroke();c.setLineDash([]);c.fillStyle=css(col);c.font='600 12px IBM Plex Mono, monospace';c.fillText(lab,x+3,y+3);};
+  ax(ang,'--r',[],'d');ax(ang-Math.PI/2,'--b',[5,4],'q');
+  const k=Rr*0.9/100;
+  const [x1,y1]=u(ang,id*k); const qa=ang-Math.PI/2; const x2=x1+iq*k*Math.cos(qa), y2=y1+iq*k*Math.sin(qa);
+  c.setLineDash([3,3]);c.strokeStyle=css('--muted');c.beginPath();c.moveTo(cx,cy);c.lineTo(x1,y1);c.lineTo(x2,y2);c.stroke();c.setLineDash([]);
+  c.strokeStyle=css('--y');c.lineWidth=4;c.beginPath();c.moveTo(cx,cy);c.lineTo(x2,y2);c.stroke();
+  const ah=Math.atan2(y2-cy,x2-cx);c.fillStyle=css('--y');c.beginPath();c.moveTo(x2,y2);c.lineTo(x2-12*Math.cos(ah-0.4),y2-12*Math.sin(ah-0.4));c.lineTo(x2-12*Math.cos(ah+0.4),y2-12*Math.sin(ah+0.4));c.fill();
+  c.fillStyle=css('--ink');c.beginPath();c.arc(cx,cy,5,0,7);c.fill();
+  c.fillStyle=css('--muted');c.font='11px IBM Plex Mono, monospace';c.fillText('θ = '+Math.round((focTh*180/Math.PI)%360)+'°',cx-Rr,cy+Rr+18);
+  // right: phase currents (top) and id/iq (bottom)
+  const L=w*0.47,W=w-L-10,top=h*0.08,mid1=h*0.3,A1=h*0.18,mid2=h*0.74,A2=h*0.16;
+  c.strokeStyle=css('--line');c.lineWidth=1;[mid1,mid2].forEach(y=>{c.beginPath();c.moveTo(L,y);c.lineTo(L+W,y);c.stroke();});
+  const span=4*Math.PI;
+  [['--r',0],['--y',2.094],['--b',-2.094]].forEach(([col,sh])=>{c.strokeStyle=css(col);c.lineWidth=1.8;c.beginPath();
+    for(let i=0;i<=W;i+=2){const th=focTh-span*(1-i/W);const v=Imag/100*Math.cos(th+del+Math.PI/2+sh);const y=mid1-A1*v;i?c.lineTo(L+i,y):c.moveTo(L+i,y);}c.stroke();});
+  c.fillStyle=css('--muted');c.font='11px IBM Plex Mono, monospace';c.fillText('ia ib ic',L+2,top+4);
+  c.fillText('id, iq',L+2,mid2-A2-8);
+  const yq=mid2-A2*iq/100, yd=mid2-A2*id/100;
+  c.strokeStyle=css('--ok');c.lineWidth=3;c.beginPath();c.moveTo(L,yq);c.lineTo(L+W,yq);c.stroke();
+  c.strokeStyle=css('--r');c.setLineDash([6,4]);c.beginPath();c.moveTo(L,yd);c.lineTo(L+W,yd);c.stroke();c.setLineDash([]);
+  c.fillStyle=css('--ok');c.font='600 12px IBM Plex Mono, monospace';c.fillText('iq '+iq+'%',L+W-64,yq-5);c.fillStyle=css('--r');c.fillText('id '+id+'%',L+W-64,yd+(id<0?14:-5));
+  c.strokeStyle=css('--y');c.lineWidth=1.5;c.beginPath();c.moveTo(L+W,top);c.lineTo(L+W,h-6);c.stroke();
+}
+['focIq','focId'].forEach(i=>$(i).addEventListener('input',drawFOC));
+
 /* ---------- 11: six-step ---------- */
 const SIX=[['+','−','0'],['+','0','−'],['0','+','−'],['−','+','0'],['−','0','+'],['0','−','+']];
 let sixStep=0,sixT=0;
@@ -2957,7 +3170,7 @@ function frame(now){
   if(id==='t6'&&pwmRun){sweep=(sweep+dt/6)%1;drawPWM();}
   if(id==='t7'){m1Ang=(m1Ang+(+$('rpm').value)/60*360*dt)%360;setMotor(M1,m1Ang);}
   if(id==='t9') drawSoft(now);
-  if(id==='t10'){drawStart(now);m2Ang=(m2Ang+(+$('m2s').value)/60*PRE[m2Kind].slow*360*dt)%360;setMotor(M2,m2Ang);}
+  if(id==='t10'){drawStart(now);focTh+=dt*2.2;drawFOC();m2Ang=(m2Ang+(+$('m2s').value)/60*PRE[m2Kind].slow*360*dt)%360;setMotor(M2,m2Ang);}
   if(id==='t11'){sixT+=dt;if(sixT>0.9){sixT=0;sixStep=(sixStep+1)%6;drawSix();}}
   if(id==='t12') drawDom(now);
   if(id==='t14'){drawDis(now);drawVac(now);}
@@ -2968,7 +3181,7 @@ function redraw(){
   const now=performance.now();
   drawTriac();drawVF();drawPWM();stageW(wph);$('rpm').oninput();m2Read();drawSix();calcs();drawEEV();
   if(reduce){Object.keys(anim).forEach(k=>anim[k]=now-1e6);}
-  drawStar(now);drawDol(now);drawSoft(now);drawStart(now);drawDis(now);drawVac(now);drawDom(now);
+  drawStar(now);drawDol(now);drawSoft(now);drawStart(now);drawFOC();drawDis(now);drawVac(now);drawDom(now);
   if(M1){setMotor(M1,m1Ang);setMotor(M2,m2Ang);}
 }
 let rz;window.addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(redraw,120)});
