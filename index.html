@@ -201,6 +201,8 @@ html.present.idle{cursor:none}
 @media (max-width:700px){.t5ctl{grid-template-columns:1fr}}
 .tbtns{display:inline-flex;gap:6px;flex-wrap:wrap}
 .lab .tag .btn.pz[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
+#bpSvg{display:block;width:100%;height:auto;background:var(--sunk);border-radius:4px}
+.bpread{font-family:var(--mono);font-size:15px;font-weight:600;margin:8px 0 0;max-width:none}
 .svgfig svg{display:block;width:100%;height:auto}
 .mfgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:10px 0 18px}
 .mf{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px;cursor:pointer;text-align:left;font:inherit;color:inherit;display:flex;flex-direction:column;gap:8px}
@@ -567,6 +569,17 @@ footer{font-size:13px;color:var(--muted);margin-top:30px}
         </tbody></table></div>
       <div class="note"><strong data-i="miscon"></strong><span data-i="t7mis"></span></div>
     </div>
+  </div>
+  <h3 data-i="bpH"></h3>
+  <div class="lab">
+    <div class="tag"><span data-i="bpTag"></span><span class="tbtns"><button type="button" class="btn" id="bpStep" data-i="bpStep"></button></span></div>
+    <div class="srgrid" style="grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)">
+      <div><svg id="bpSvg" viewBox="10 0 360 320" role="img" aria-label="BLDC motor: stator coils energised by pulses"></svg>
+        <p id="bpRead" class="bpread"></p>
+        <div class="legend"><span><i style="background:var(--r);height:8px"></i><span data-i="bpN"></span></span><span><i style="background:var(--b);height:8px"></i><span data-i="bpS"></span></span><span><i style="background:var(--y);height:4px"></i><span data-i="bpF"></span></span></div></div>
+      <div><canvas id="bpCv" width="460" height="330"></canvas></div>
+    </div>
+    <p class="srnote" data-i="bpNote"></p>
   </div>
 </section>
 
@@ -2924,6 +2937,17 @@ m100S:"100% வேகம் (50 Hz)",m100P:"100% திறன்",aFlow:"ஓட�
 affNote:"கோடுகள் முழு வேகக் குறிப்பைக் காட்டுகின்றன: 100% வேகம் (50 Hz) = 100% ஓட்டம், 100% அழுத்தம், 100% திறன். வேகத்தைக் குறைத்துப் பாருங்கள்: ஓட்டம் அதே விகிதத்தில் குறைகிறது, ஆனால் திறன் கனமாகக் குறைகிறது. 80% வேகத்திற்கு 51% திறன் போதும்.",
 t5fL:"இன்வெர்ட்டர் வெளியீட்டு அதிர்வெண்",t5rpm:"4-போல் மோட்டார் வேகம்"});
 
+Object.assign(T.en,{bpH:"BLDC pulses: how the controller drives the coils",bpTag:"Coil pulses and Hall signals",bpStep:"Step ▶",bpN:"Coil face N",bpS:"Coil face S",bpF:"Stator field (pull on rotor N)",bpStepW:"Step",bpOffW:"off",
+bpNote:"The controller sends DC pulses to the stator coils in a fixed order of six steps. In each step current enters one phase and leaves another (two coils on, one off). The coils become electromagnets (N and S), and the stator field jumps 60°. The rotor magnet keeps chasing it, so it turns. The three Hall sensors tell the controller where the rotor is, so it knows when to switch to the next step. Faster switching gives faster rotation. Use Pause and Step ▶ to go one step at a time."});
+Object.assign(T.ml,{bpH:"BLDC പൾസുകൾ: കൺട്രോളർ കോയിലുകളെ എങ്ങനെ പ്രവർത്തിപ്പിക്കുന്നു",bpTag:"കോയിൽ പൾസുകളും ഹാൾ സിഗ്നലുകളും",bpStep:"സ്റ്റെപ്പ് ▶",bpN:"കോയിൽ മുഖം N",bpS:"കോയിൽ മുഖം S",bpF:"സ്റ്റേറ്റർ ഫീൽഡ് (റോട്ടർ N-നെ വലിക്കുന്നു)",bpStepW:"സ്റ്റെപ്പ്",bpOffW:"ഓഫ്",
+bpNote:"കൺട്രോളർ ആറ് സ്റ്റെപ്പുകളുടെ നിശ്ചിത ക്രമത്തിൽ സ്റ്റേറ്റർ കോയിലുകളിലേക്ക് DC പൾസുകൾ അയയ്ക്കുന്നു. ഓരോ സ്റ്റെപ്പിലും കറന്റ് ഒരു ഫേസിലൂടെ കയറി മറ്റൊന്നിലൂടെ പുറത്തുപോകുന്നു (രണ്ട് കോയിൽ ഓൺ, ഒന്ന് ഓഫ്). കോയിലുകൾ ഇലക്ട്രോമാഗ്നറ്റുകളായി (N, S) മാറുന്നു; സ്റ്റേറ്റർ ഫീൽഡ് 60° ചാടുന്നു. റോട്ടർ മാഗ്നറ്റ് അതിനെ പിന്തുടർന്ന് കറങ്ങുന്നു. മൂന്ന് ഹാൾ സെൻസറുകൾ റോട്ടറിന്റെ സ്ഥാനം കൺട്രോളറിനെ അറിയിക്കുന്നു; അതിനാൽ അടുത്ത സ്റ്റെപ്പിലേക്ക് എപ്പോൾ മാറണമെന്ന് അറിയാം. വേഗത്തിൽ സ്വിച്ച് ചെയ്താൽ വേഗത്തിൽ കറങ്ങും. ഓരോ സ്റ്റെപ്പും കാണാൻ നിർത്തുക, സ്റ്റെപ്പ് ▶ ഉപയോഗിക്കുക."});
+Object.assign(T.hi,{bpH:"BLDC पल्स: कंट्रोलर कॉइलों को कैसे चलाता है",bpTag:"कॉइल पल्स और हॉल सिग्नल",bpStep:"स्टेप ▶",bpN:"कॉइल सतह N",bpS:"कॉइल सतह S",bpF:"स्टेटर फ़ील्ड (रोटर N को खींचता है)",bpStepW:"स्टेप",bpOffW:"बंद",
+bpNote:"कंट्रोलर छह स्टेप के निश्चित क्रम में स्टेटर कॉइलों को DC पल्स भेजता है। हर स्टेप में करंट एक फेज़ से अंदर जाता है और दूसरे से बाहर आता है (दो कॉइल ऑन, एक ऑफ़)। कॉइल इलेक्ट्रोमैग्नेट (N और S) बन जाते हैं और स्टेटर फ़ील्ड 60° आगे कूदता है। रोटर मैग्नेट उसका पीछा करता है, इसलिए घूमता है। तीन हॉल सेंसर कंट्रोलर को रोटर की स्थिति बताते हैं, ताकि वह अगले स्टेप पर कब जाए यह जान सके। तेज़ स्विचिंग से तेज़ घूर्णन। एक-एक स्टेप देखने के लिए रोकें और स्टेप ▶ दबाएँ।"});
+Object.assign(T.kn,{bpH:"BLDC ಪಲ್ಸ್‌ಗಳು: ಕಂಟ್ರೋಲರ್ ಕಾಯಿಲ್‌ಗಳನ್ನು ಹೇಗೆ ಚಲಾಯಿಸುತ್ತದೆ",bpTag:"ಕಾಯಿಲ್ ಪಲ್ಸ್ ಮತ್ತು ಹಾಲ್ ಸಿಗ್ನಲ್‌ಗಳು",bpStep:"ಸ್ಟೆಪ್ ▶",bpN:"ಕಾಯಿಲ್ ಮುಖ N",bpS:"ಕಾಯಿಲ್ ಮುಖ S",bpF:"ಸ್ಟೇಟರ್ ಫೀಲ್ಡ್ (ರೋಟರ್ N ಅನ್ನು ಎಳೆಯುತ್ತದೆ)",bpStepW:"ಸ್ಟೆಪ್",bpOffW:"ಆಫ್",
+bpNote:"ಕಂಟ್ರೋಲರ್ ಆರು ಸ್ಟೆಪ್‌ಗಳ ನಿಗದಿತ ಕ್ರಮದಲ್ಲಿ ಸ್ಟೇಟರ್ ಕಾಯಿಲ್‌ಗಳಿಗೆ DC ಪಲ್ಸ್ ಕಳುಹಿಸುತ್ತದೆ. ಪ್ರತಿ ಸ್ಟೆಪ್‌ನಲ್ಲಿ ಕರೆಂಟ್ ಒಂದು ಫೇಸ್ ಮೂಲಕ ಒಳಗೆ ಹೋಗಿ ಇನ್ನೊಂದರಿಂದ ಹೊರಬರುತ್ತದೆ (ಎರಡು ಕಾಯಿಲ್ ಆನ್, ಒಂದು ಆಫ್). ಕಾಯಿಲ್‌ಗಳು ವಿದ್ಯುತ್ಕಾಂತಗಳಾಗುತ್ತವೆ (N ಮತ್ತು S), ಸ್ಟೇಟರ್ ಫೀಲ್ಡ್ 60° ಜಿಗಿಯುತ್ತದೆ. ರೋಟರ್ ಮ್ಯಾಗ್ನೆಟ್ ಅದನ್ನು ಹಿಂಬಾಲಿಸಿ ತಿರುಗುತ್ತದೆ. ಮೂರು ಹಾಲ್ ಸೆನ್ಸರ್‌ಗಳು ರೋಟರ್ ಸ್ಥಾನವನ್ನು ಕಂಟ್ರೋಲರ್‌ಗೆ ತಿಳಿಸುತ್ತವೆ, ಆದ್ದರಿಂದ ಮುಂದಿನ ಸ್ಟೆಪ್‌ಗೆ ಯಾವಾಗ ಬದಲಾಯಿಸಬೇಕೆಂದು ತಿಳಿಯುತ್ತದೆ. ವೇಗವಾಗಿ ಸ್ವಿಚ್ ಮಾಡಿದರೆ ವೇಗವಾಗಿ ತಿರುಗುತ್ತದೆ. ಒಂದೊಂದೇ ಸ್ಟೆಪ್ ನೋಡಲು ನಿಲ್ಲಿಸಿ ಮತ್ತು ಸ್ಟೆಪ್ ▶ ಬಳಸಿ."});
+Object.assign(T.ta,{bpH:"BLDC பல்ஸ்கள்: கட்டுப்படுத்தி சுருள்களை எப்படி இயக்குகிறது",bpTag:"சுருள் பல்ஸ்கள் மற்றும் ஹால் சிக்னல்கள்",bpStep:"ஸ்டெப் ▶",bpN:"சுருள் முகம் N",bpS:"சுருள் முகம் S",bpF:"ஸ்டேட்டர் புலம் (ரோட்டர் N-ஐ இழுக்கிறது)",bpStepW:"ஸ்டெப்",bpOffW:"ஆஃப்",
+bpNote:"கட்டுப்படுத்தி ஆறு ஸ்டெப்களின் நிலையான வரிசையில் ஸ்டேட்டர் சுருள்களுக்கு DC பல்ஸ்களை அனுப்புகிறது. ஒவ்வொரு ஸ்டெப்பிலும் மின்னோட்டம் ஒரு பேஸ் வழியாக நுழைந்து மற்றொன்றின் வழியாக வெளியேறுகிறது (இரண்டு சுருள் ஆன், ஒன்று ஆஃப்). சுருள்கள் மின்காந்தங்களாக (N, S) மாறுகின்றன; ஸ்டேட்டர் புலம் 60° தாவுகிறது. ரோட்டர் காந்தம் அதைத் துரத்தி சுழல்கிறது. மூன்று ஹால் சென்சர்கள் ரோட்டரின் நிலையைக் கட்டுப்படுத்திக்குத் தெரிவிக்கின்றன; எனவே அடுத்த ஸ்டெப்புக்கு எப்போது மாற வேண்டும் என்பது தெரியும். வேகமாக மாற்றினால் வேகமாகச் சுழலும். ஒவ்வொரு ஸ்டெப்பாகப் பார்க்க நிறுத்தி, ஸ்டெப் ▶ பயன்படுத்துங்கள்."});
+
 T.en.foot="Prepared at NSTI Calicut. Star-rating data and charts: PIB / BEE. Motor videos: Learn Engineering on YouTube. Diagrams and animations were drawn for this lesson.";
 T.ml.foot="NSTI കോഴിക്കോട് തയ്യാറാക്കിയത്. സ്റ്റാർ റേറ്റിംഗ് ഡാറ്റയും ചാർട്ടുകളും: PIB / BEE. മോട്ടോർ വീഡിയോകൾ: YouTube-ലെ Learn Engineering. ഡയഗ്രങ്ങളും ആനിമേഷനുകളും ഈ പാഠത്തിനായി വരച്ചത്.";
 T.hi.foot="NSTI कालीकट द्वारा तैयार। स्टार-रेटिंग डेटा और चार्ट: PIB / BEE। मोटर वीडियो: YouTube पर Learn Engineering। आरेख और एनीमेशन इस पाठ के लिए बनाए गए।";
@@ -3587,6 +3611,65 @@ function buildMF(){
     b.onclick=()=>b.classList.toggle('open');g.appendChild(b);});
 }
 
+/* ---------- 7: BLDC coil pulses (LearnEngineering-style concept, original drawing) ---------- */
+const BP_HALL=['101','100','110','010','011','001'];
+const BP120=[[1,-1,0],[1,0,-1],[0,1,-1],[-1,1,0],[-1,0,1],[0,-1,1]];   // phase currents A,B,C per 60° step
+const BPC={x:190,y:160};
+const BP_TEETH=[['A',0,1,90],['C′',2,-1,30],['B',1,1,-30],['A′',0,-1,-90],['C',2,1,-150],['B′',1,-1,150]]; // name, phase, sign, angle (deg, math)
+let BP_PHI=null, BP_DIR=1;
+function bpField(k){let fx=0,fy=0;BP_TEETH.forEach(([n,ph,sg,a])=>{const v=BP120[k][ph]*sg;fx+=v*Math.cos(a*Math.PI/180);fy+=v*Math.sin(a*Math.PI/180);});return Math.atan2(fy,fx)*180/Math.PI;}
+function buildBP(){
+  const g=$('bpSvg');if(!g)return;
+  BP_PHI=[0,1,2,3,4,5].map(k=>bpField(k)+180);          // direction the rotor N pole is pulled to (towards the stator S faces)
+  const d=((BP_PHI[1]-BP_PHI[0])%360+540)%360-180;BP_DIR=d>0?1:-1;
+  const {x,y}=BPC;let h='';
+  h+=`<circle cx="${x}" cy="${y}" r="138" fill="var(--surface)" stroke="var(--ink)" stroke-width="2.2"/><circle cx="${x}" cy="${y}" r="112" fill="var(--bg)" stroke="var(--line)" stroke-width="1.2"/>`;
+  BP_TEETH.forEach(([n,ph,sg,a],i)=>{const rot=90-a;
+    h+=`<g transform="rotate(${-a+90} ${x} ${y})"><rect id="bpT${i}" x="${x-17}" y="${y-132}" width="34" height="62" rx="4" fill="var(--sunk)" stroke="var(--ink)" stroke-width="1.8"/>`+
+      [0,1,2,3,4].map(j=>`<line x1="${x-21}" y1="${y-124+j*9}" x2="${x+21}" y2="${y-120+j*9}" stroke="var(--y)" stroke-width="2.6" opacity=".9"/>`).join('')+
+      `<text id="bpP${i}" x="${x}" y="${y-76}" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="700" fill="#fff" transform="rotate(${a-90} ${x} ${y-81})"></text></g>`;
+    const r=152,lx=x+r*Math.cos(a*Math.PI/180),ly=y-r*Math.sin(a*Math.PI/180)+5;
+    h+=`<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="700" fill="var(--ink)">${n}</text>`;});
+  h+=`<g id="bpFld" opacity=".85"><line x1="${x}" y1="${y}" x2="${x+96}" y2="${y}" stroke="var(--y)" stroke-width="7" stroke-linecap="round"/><path d="M${x+104} ${y}l-16 -10v20z" fill="var(--y)"/></g>`;
+  h+=`<g id="bpRot"><circle cx="${x}" cy="${y}" r="56" fill="var(--surface)" stroke="var(--ink)" stroke-width="2"/><path d="M${x} ${y-54}A54 54 0 0 1 ${x} ${y+54}Z" fill="var(--r)"/><path d="M${x} ${y-54}A54 54 0 0 0 ${x} ${y+54}Z" fill="var(--b)"/>`+
+     `<text x="${x+27}" y="${y+7}" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="20" font-weight="700" fill="#fff">N</text><text x="${x-27}" y="${y+7}" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="20" font-weight="700" fill="#fff">S</text></g><circle cx="${x}" cy="${y}" r="6" fill="var(--ink)"/>`;
+  [0,1,2].forEach(i=>{const a=(120-i*120)*Math.PI/180,hx=x+92*Math.cos(a),hy=y-92*Math.sin(a);h+=`<rect id="bpH${i}" x="${(hx-10).toFixed(1)}" y="${(hy-8).toFixed(1)}" width="22" height="16" rx="3" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.2"/><text x="${hx.toFixed(1)}" y="${(hy+4).toFixed(1)}" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="700" fill="var(--ink)">H${i+1}</text>`;});
+  g.innerHTML=h;
+  $('bpStep').onclick=()=>{PZ.t7=true;pzLabel();const [k]=bpK();m1Ang=((k+1)*60+0.5-30+360)%360;setMotor(M1,m1Ang);drawBP();};
+}
+let bpLastK=-1;
+function bpK(){const e=((m1Ang%360)+360)%360,p=(e+30)%360;return [Math.floor(p/60),p,(p%60)/60];}
+function drawBP(){
+  if(!$('bpSvg')||!$('bpSvg').firstChild)return;
+  const [k,pos,f]=bpK(),cur=BP120[k],{x,y}=BPC;
+  BP_TEETH.forEach(([n,ph,sg],i)=>{const v=cur[ph]*sg;$('bpT'+i).setAttribute('fill',v>0?'var(--r)':v<0?'var(--b)':'var(--sunk)');$('bpP'+i).textContent=v>0?'N':v<0?'S':'';});
+  const phi=BP_PHI[k], rotA=phi-BP_DIR*(120-60*f);
+  $('bpRot').setAttribute('transform',`rotate(${(-rotA).toFixed(1)} ${x} ${y})`);
+  $('bpFld').setAttribute('transform',`rotate(${(-phi).toFixed(1)} ${x} ${y})`);
+  BP_HALL[k].split('').forEach((b,i)=>$('bpH'+i).setAttribute('fill',b==='1'?'var(--y)':'var(--surface)'));
+  if(k!==bpLastK){bpLastK=k;const ph=['A','B','C'],inn=ph[cur.indexOf(1)],out=ph[cur.indexOf(-1)],off=ph[cur.indexOf(0)];
+    $('bpRead').textContent=t('bpStepW')+' '+(k+1)+' · Hall '+BP_HALL[k]+' · '+inn+' → '+out+' · '+off+' '+t('bpOffW');}
+  const cv=$('bpCv');if(!cv.offsetParent)return;
+  const [c,w,h]=cv2(cv),L=40,R=8,T=26,W=w-L-R,rows=[['H1',.6],['H2',.6],['H3',.6],['iA',1],['iB',1],['iC',1]];
+  const tot=rows.reduce((a,r)=>a+r[1],0),gap=9,uh=(h-T-6-gap*rows.length)/tot,X=d=>L+d/360*W;
+  c.font='600 12px IBM Plex Mono, monospace';c.textAlign='center';
+  for(let i=0;i<6;i++){c.fillStyle=i===k?css('--y')+'38':(i%2?css('--line')+'40':'transparent');c.fillRect(X(i*60),T-2,W/6,h-T);c.fillStyle=css('--ink');c.fillText(String(i+1),X(i*60+30),16);}
+  c.strokeStyle=css('--line');c.lineWidth=1;c.setLineDash([2,3]);for(let i=0;i<=6;i++){c.beginPath();c.moveTo(X(i*60),T-2);c.lineTo(X(i*60),h-4);c.stroke();}c.setLineDash([]);
+  c.textAlign='left';
+  let yy=T;const col={iA:css('--r'),iB:css('--y'),iC:css('--b')};
+  rows.forEach(([nm,hw],ri)=>{const hh=hw*uh,mid=yy+hh/2,amp=hh/2-3;
+    c.fillStyle=css('--ink');c.font='600 12px IBM Plex Mono, monospace';c.fillText(nm,4,mid+4);
+    c.strokeStyle=css('--line');c.lineWidth=1;c.beginPath();c.moveTo(L,mid);c.lineTo(L+W,mid);c.stroke();
+    if(ri<3){const Y=b=>b==='1'?yy+3:yy+hh-3;c.strokeStyle=css('--muted');c.lineWidth=2.2;c.beginPath();for(let s2=0;s2<6;s2++){const b=BP_HALL[s2][ri];s2?c.lineTo(X(s2*60),Y(b)):c.moveTo(X(0),Y(b));c.lineTo(X(s2*60+60),Y(b));}c.stroke();}
+    else{const i=ri-3;for(let s2=0;s2<6;s2++){const v=BP120[s2][i];if(!v)continue;c.fillStyle=col[nm]+(s2===k?'cc':'55');const r0=Math.min(mid,mid-v*amp),hgt=amp;c.fillRect(X(s2*60)+1,v>0?mid-amp:mid,W/6-2,hgt);}
+      c.strokeStyle=col[nm];c.lineWidth=2.2;c.beginPath();for(let s2=0;s2<6;s2++){const v=BP120[s2][i];const yv=mid-v*amp;s2?c.lineTo(X(s2*60),yv):c.moveTo(X(0),yv);c.lineTo(X(s2*60+60),yv);}c.stroke();
+      c.fillStyle=css('--muted');c.font='10px IBM Plex Mono, monospace';c.fillText('+',L-10,mid-amp+8);c.fillText('−',L-10,mid+amp);}
+    yy+=hh+gap;});
+  c.strokeStyle=css('--ink');c.lineWidth=2;c.beginPath();c.moveTo(X(pos),T-4);c.lineTo(X(pos),h-4);c.stroke();
+  c.fillStyle=css('--ink');c.beginPath();c.moveTo(X(pos)-6,T-10);c.lineTo(X(pos)+6,T-10);c.lineTo(X(pos),T-2);c.fill();
+}
+function bpTick(){drawBP();}
+
 /* ---------- per-tab pause / continue ---------- */
 const PZ_TABS=['t1','t2','t3','t7','t9','t10','t11','t12','t14','t15'], PZ_KEYS={t1:['star'],t2:['dol'],t9:['soft'],t10:['start'],t14:['dis','vac']};
 const PZ={}; let domClock=0;
@@ -3594,6 +3677,8 @@ function pzLabel(){document.querySelectorAll('.pz').forEach(b=>{const on=!!PZ[b.
 PZ_TABS.forEach(id=>{const sec=$(id);if(!sec)return;sec.querySelectorAll('.lab .tag').forEach(tag=>{
   const b=document.createElement('button');b.type='button';b.className='btn pz';b.dataset.tab=id;b.onclick=()=>{PZ[id]=!PZ[id];pzLabel();};
   const rp=tag.querySelector('[data-replay]');
+  const tb=tag.querySelector('.tbtns');
+  if(tb&&!rp){tb.appendChild(b);return;}
   if(rp){const g=document.createElement('span');g.className='tbtns';rp.replaceWith(g);g.appendChild(b);g.appendChild(rp);rp.addEventListener('click',()=>{PZ[id]=false;pzLabel();});}
   else tag.appendChild(b);});});
 
@@ -3611,7 +3696,7 @@ function frame(now){
   if(id==='t4'){vfTick(dt);drawAff();}
   if(id==='t5'&&t5Run){wph+=dt*3;stageW(wph);const f=+$('t5f').value;t5Ang=(t5Ang+30*f*0.96/60/20*360*dt)%360;$('t5shaft').setAttribute('transform',`rotate(${t5Ang.toFixed(1)} 60 60)`);}
   if(id==='t6'&&pwmRun){sweep=(sweep+dt/6)%1;drawPWM();}
-  if(id==='t7'){m1Ang=(m1Ang+(+$('rpm').value)/60*360*dt)%360;setMotor(M1,m1Ang);}
+  if(id==='t7'){m1Ang=(m1Ang+(+$('rpm').value)/60*360*dt)%360;setMotor(M1,m1Ang);bpTick();}
   if(id==='t9') drawSoft(now);
   if(id==='t10'){drawStart(now);focTh+=dt*2.2;drawFOC();m2Ang=(m2Ang+(+$('m2s').value)/60*PRE[m2Kind].slow*360*dt)%360;setMotor(M2,m2Ang);}
   if(id==='t11'){sixT+=dt;if(sixT>0.9){sixT=0;sixStep=(sixStep+1)%6;drawSix();}}
@@ -3625,14 +3710,14 @@ function redraw(){
   srUI();drawTriac();drawVF();drawAff();drawVfWave();if($('tachNeedle'))setTach(120*(+$('freq').value)/poles*0.96,0);$('t5f').oninput();drawPWM();stageW(wph);$('rpm').oninput();m2Read();drawSix();calcs();drawEEV();
   if(reduce){Object.keys(anim).forEach(k=>anim[k]=now-1e6);}
   drawStar(now);drawDol(now);drawSoft(now);drawStart(now);drawFOC();drawDis(now);drawVac(now);drawDom(now);
-  if(M1){setMotor(M1,m1Ang);setMotor(M2,m2Ang);}
+  if(M1){setMotor(M1,m1Ang);setMotor(M2,m2Ang);bpLastK=-1;drawBP();}
 }
 let rz;window.addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(redraw,120)});
 if(window.matchMedia) matchMedia('(prefers-color-scheme: dark)').addEventListener('change',redraw);
 new MutationObserver(redraw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
 window.addEventListener('hashchange',()=>{const k=TABS.indexOf(location.hash.slice(1)); if(k>=0&&k!==cur) show(k,false);});
 
-buildSR(); buildTach(); M1=buildMotor('m1',1); M1.hall=$('hall'); M2=buildMotor('m2',2); buildSix(); m2Set('ac');
+buildSR(); buildTach(); buildBP(); M1=buildMotor('m1',1); M1.hall=$('hall'); M2=buildMotor('m2',2); buildSix(); m2Set('ac');
 const hk=TABS.indexOf((location.hash||'').slice(1)); if(hk>=0) cur=hk;
 apply(); show(cur,false);
 if(reduce) redraw(); else requestAnimationFrame(frame);
